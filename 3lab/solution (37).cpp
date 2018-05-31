@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+std::string decTobin(int n);
+int main(){
+    int n;
+    std::cin >> n;
+    std::cout << decTobin(n);
+    return 0;
+}
+
+std::string decTobin(int n)
+{
+    std::string r = "";
+    if( n > 0 ){
+    while ( n != 0 ){
+        if ( n%2 == 0 ){
+            r += "0";
+        }else{
+            r += "1";
+        }
+        n/=2;
+    }
+    }else{
+        r = "0";
+    }
+    r = std::string( r.rbegin(), r.rend() );
+    return r;
+}

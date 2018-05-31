@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+
+unsigned long long fakt(unsigned long long n)
+{
+    if(n == 0 || n == 1){
+        return 1;
+    }
+    else{return n*fakt(n-2);}
+}
+int main(){
+    int n ;
+    std::ifstream ivedimas;
+    ivedimas.open("13.txt");
+    ivedimas >> n ;
+    
+    std::ofstream isvedimas;
+    isvedimas.open("13.out");
+    
+    isvedimas <<fakt(n);
+    isvedimas.close();
+    ivedimas.close();
+    
+    return 0;
+}
