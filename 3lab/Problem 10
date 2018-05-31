@@ -5,7 +5,8 @@ int main(){
     int n , m , ilgis , temp , a , b , laik;
     std::cin >>n;
     int *array = new int[n];
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
         std::cin >> a;
         array[i] = a;
     }
@@ -16,13 +17,16 @@ int main(){
         std::cin >> b;
         pagrindinis[i] = b;
     }
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
         pagrindinis[i] = array[i];
     }
     delete[] array;
-    for (int i = 0; i < ilgis; i++){
+    for (int i = 0; i < ilgis; i++)
+    {
         laik = i;
-        for (int j = i + 1; j < ilgis; j++){
+        for (int j = i + 1; j < ilgis; j++)
+        {
             if (pagrindinis[j] < pagrindinis[laik]){
                 laik = j;
             }
@@ -31,7 +35,8 @@ int main(){
         pagrindinis[laik] = pagrindinis[i];
         pagrindinis[i] = temp;
     }
-    for (int i = 0; i < ilgis; i++){
+    for (int i = 0; i < ilgis; i++)
+    {
         std::cout << pagrindinis[i] << " ";
     }
     return 0;
