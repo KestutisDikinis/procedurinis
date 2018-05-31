@@ -1,25 +1,31 @@
 #include <iostream>
 #include <cmath>
-using namespace std;
-
-int main() {
-    unsigned long n , min , max , sudetis = 0 ;
-    cin >> n;
-    min = pow ( 10 , (n-1) );
-    max= pow ( 10 , n );
-    if ( n < 10){
-    for ( auto i = min ; min < max ; min++ ){
-            sudetis += min;
+using std::cin;
+using std::cout;
+using std::endl;
+//Apskaičiuokite visų n-ženklių skaičių sumą
+int main()
+{
+    unsigned long long skaicius, min, max, sudetis = 0 ;
+    cin >> skaicius;
+    min = pow(10, (skaicius-1));
+    max= pow(10, skaicius);
+    if (skaicius < 10){
+        for ( auto i = min ; min < max ; i++ )
+        {
+            sudetis += i;
         }
         cout << sudetis << endl;
     }
-    if ( n >= 10){
+    if ( skaicius >= 10){
         cout << 494999999;
-        for ( auto j = 10 ; j <= n ; j++){
+        for ( auto j = 10 ; j <= skaicius ; j++)
+        {
             cout << 9;
         }
         cout << 550000000;
-        for ( auto j = 10 ; j <= n ; j++){
+        for ( auto j = 10 ; j <= skaicius ; j++)
+        {
             cout << 0;
         }
     }
