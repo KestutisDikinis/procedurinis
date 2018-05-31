@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Adresatai</title>
+		<style>
+			table, tr, td {
+				border: #dedede 1px solid;
+			}
+			table tr:nth-child(2n + 1) {
+				background: #dedede;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>Vardas</th>
+				<th>Pavarde</th>
+				<th>Tel</th>
+				<th>Adresas</th>
+				<th>Coordinates</th>
+			</tr>
+			
+			<?php foreach($adresatai as $adresatas): ?>
+			<tr>
+				<td><?= $adresatas->vardas() ?></td>
+				<td><?= $adresatas->pavarde() ?></td>
+				<td><?= $adresatas->telNr() ?></td>
+				<td><?= $adresatas->adresas() ?></td>
+				<td><?= $adresatas->latitude() ?>, <?= $adresatas->longitude() ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+	</body>
+</html>

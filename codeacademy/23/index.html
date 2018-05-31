@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teip</title>
+	<style>
+		.error {
+			border: red 2px solid;
+		}
+	</style>
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1>Register</h1>
+
+    <form id="registr-form" action="index.html" method="post">
+        <input type="text" name="vardas"/>
+        <input type="password" name="password" />
+        <input type="password" name="password2"/>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="form-error"></div>
+
+    <script>
+        $('#registr-form').submit(function (e) {
+            var pwd1 = $('#registr-form>input[name=password]');
+            var pwd2 = $('#registr-form>input[name=password2]');
+            
+            if(pwd1.val().length ==0 || pwd2.val().length ==0){
+            	pwd1.addClass('error');
+            	pwd2.addClass('error');
+            	
+            	$('#form-error').html("<strong>Slaptazodis negali buti tuscias.</strong>");
+                e.preventDefault();
+                return;
+            }
+            if(pwd1.val() != pwd2.val()) {
+            	pwd1.addClass('error');
+            	pwd2.addClass('error');
+            	
+            	$('#form-error').html("<strong>Slaptazodziai nesutampa.</strong>");
+                e.preventDefault();
+                return;
+            }
+            
+            pwd1.removeClass('error');
+            pwd2.removeClass('error');
+            $('#form-error').html();
+        });
+    </script>
+</body>
+</html>

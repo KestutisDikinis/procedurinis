@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Puslapis</title>
+		    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<style>
+		table, tr, td {
+			border: #dedede 1px solid;
+		}
+		tr:nth-child(2n+1) td {
+			background:#dedede;
+		}
+	</style>
+	</head>
+	<body>
+		<table>
+			<?php foreach($array as $element): ?>
+			<tr>
+				<td><?= $element; ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+		
+		<script>
+			window.setInterval(function(e) {
+				$.post('index.php', function(data) {
+					var array = JSON.parse(data);
+					
+					var html = "";
+					
+					array.forEach(function(el) {
+						html += "<tr><td>" + el + "</td></tr>";
+					});
+					
+					$("table").html(html);
+				});
+			}, 3000);
+		</script>
+	</body>
+</html>
