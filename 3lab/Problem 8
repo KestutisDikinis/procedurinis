@@ -17,7 +17,6 @@ void Apsk(long double x1, long double y1, long double x2, long double y2, long d
     
 }
 
-
 int main ()
 {
     long double x1,y1,x2,y2,x3,y3,x4,y4;
