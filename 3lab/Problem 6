@@ -5,8 +5,7 @@ int main()
 {
     long long a;
     std::cin >> a;
-    if( IsPrime(a) )
-    {
+    if( IsPrime(a) ) {
         std::cout << "1";
     }else{
         std::cout << "0";
