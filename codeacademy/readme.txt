@@ -1,0 +1,1 @@
+Darbai, atlikti codeacademy.
