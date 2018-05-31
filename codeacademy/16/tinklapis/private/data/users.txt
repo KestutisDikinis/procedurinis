@@ -1,0 +1,1 @@
+{"test@test2.lt":{"vardas":"Jonas","email":"test@test2.lt","password":"$2y$10$fMZ.K.WLrlKr.nfNzeWBpuMdqqyeiu8TU4Lmjbahys2uLwuBF\/Xz2","amzius":99}}
