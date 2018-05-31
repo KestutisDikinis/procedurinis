@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Puslapis</title>
+	</head>
+	<body>
+		<strong><?= $error ?? '' ?></strong>
+		<form method="POST" action="registracija.php">
+			Vardas <input type="text" name="vardas" /><br/>
+			Mail <input type="email" name="email" /><br/>
+			pass <input type="password" name="password" /><br/>
+			pass2 <input type="password" name="password2" /><br/>
+			
+			<input type="submit"/>
+		</form>
+	</body>
+</html>

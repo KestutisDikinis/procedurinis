@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Layout</title>
+		
+		<style>
+			.clearfix {
+				clear:both;
+			}
+		
+			#blokas {
+				border: #000000 1px solid;
+				background:red;
+			}
+			
+			/*div {*/
+			/*	border: #000000 1px solid;*/
+			/*	background:red;*/
+			/*}*/
+		
+			header, footer, main, section, aside {
+				border: #000000 1px solid;
+			}
+			section, aside {
+				box-sizing:border-box;
+			}
+			
+			header {
+				height: 80px;
+				width:1000px;
+			}
+			
+			footer {
+				height: 80px;
+				width:1000px;
+			}
+			
+			main {
+				min-height: 500px;
+				width:1000px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			
+			section {
+				height: 480px;
+				width:750px;
+				float: left;
+			}
+			
+			aside {
+				height: 480px;
+				width:250px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			
+		</header>
+		<main>
+			<section>
+				Turinys
+			</section>
+			
+			<aside>
+				Sidebar
+			</aside>
+			<div class="clearfix"></div>
+		</main>
+		<footer>
+			footer
+		</footer>
+	</body>
+</html>

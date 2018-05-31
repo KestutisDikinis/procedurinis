@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div {
+				width: 25px;
+				height: 25px;
+				border: #dedede 1px solid;
+				display:inline-block;
+			}
+			.g {
+				background: yellow;
+			}
+			.z  {
+				background: green;
+			}
+			.r {
+				background:red;
+			}
+			.b {
+				background:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<?php foreach($veliavos as $veliava): ?>
+			<?php include 've.phtml' ?>
+		<?php endforeach; ?>
+	</body>
+</html>

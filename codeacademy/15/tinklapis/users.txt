@@ -1,0 +1,1 @@
+{"vardas":"labas","email":"test@test.lt","password":"$2y$10$BuG.nG9UvbXt9V9V7dwCOOVVeyJvVxER5pEQiY\/siAgGdW4RAkYZ6"}
