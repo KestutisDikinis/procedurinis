@@ -1,0 +1,19 @@
+<?php include_once '/Applications/MAMP/htdocs/Projektas/header.php' ?>
+		<table>
+			<tr>
+				<th>Vardas</th>
+				<th>Pavarde</th>
+				<th>Email</th>
+				<th>Username</th>
+			</tr>
+			
+			<?php foreach($rez as $vartotojas): ?>
+			<tr>
+				<td><?= $vartotojas['user_firstname'] ?></td>
+				<td><?= $vartotojas['user_lastname'] ?></td>
+				<td><?= $vartotojas['user_email'] ?></td>
+				<td><?= $vartotojas['user_name'] ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+<?php include_once '/Applications/MAMP/htdocs/Projektas/footer.php' ?>
