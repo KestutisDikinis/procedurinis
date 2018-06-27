@@ -1,0 +1,134 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+void diditerpimas();
+void maziterpimas();
+void meniu();
+void isvedimas();
+void irasymas();
+void skaitymas();
+
+int n;
+int const kiekis = 16800;
+int A[kiekis];
+
+
+int main()
+{
+	cout << "DVIKRYPTIS ITERPIMO ALGORITMAS\n";
+	skaitymas();
+	meniu();
+	return 0;
+}
+
+void meniu()
+{
+	cout << endl;
+	cout << "***  Meniu  ***\n";
+	cout << "1)Isvedimas 2)Surikiuoti didejimo tvarka 3)Surikiuoti mazejimo tvarka 4)Uzdaryti\n";
+	int x;
+	cin >> x;
+	switch (x)
+	{
+	case 1: isvedimas(); meniu(); break;
+	case 2: diditerpimas(); isvedimas(); meniu(); break;
+	case 3: maziterpimas(); isvedimas(); meniu(); break;
+	case 4: irasymas(); break;
+	default: cout << "Toks pasirinkimas neegzistuoja\n"; meniu(); break;
+	}
+}
+
+void skaitymas()
+{
+	ifstream duom("duomenys.txt");
+	duom >> n;
+	for (int i = 0; i < n; i++)
+	{
+		duom >> A[i];
+	}
+	duom.close();
+}
+
+void irasymas()
+{
+	ofstream rez("rezultatai.txt");
+	rez << "Kiekis: " << n << endl;
+	for (int i = 0; i < n; i++)
+	{
+		rez << A[i] << " ";
+	}
+	cout << endl << "Rezultatai irasyti\n";
+}
+
+void isvedimas()
+{
+	cout << "\nKiekis: " << n << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << A[i] << " ";
+	}
+}
+
+void diditerpimas()
+{
+	cout << "\nSkaiciai buvo surikuoti didejimo tvarka";
+	int pirmas, j;
+	for (int k = 0; k < n; ++k)
+	{
+		pirmas = A[0];
+		for (int i = 1; i < n; i++)
+		{
+			if (A[i] > pirmas)
+			{
+				j = i + 1;
+				while (j <= n - 1 && A[j] < A[j - 1])
+				{
+					swap(A[j - 1], A[j]);
+					j = j + 1;
+				}
+			}
+			if (A[i] < pirmas)
+			{
+				j = i - 1;
+				while (j >= 0 && A[j] > A[j + 1])
+				{
+					swap(A[j + 1], A[j]);
+					j = j - 1;
+				}
+			}
+		}
+	}
+}
+
+void maziterpimas()
+{
+	cout << "\nSkaiciai buvo surikiuoti mazejimo tvarka";
+	int pirmas, j;
+	for (int k = 0; k < n; ++k)
+	{
+		pirmas = A[3];
+		for (int i = 1; i < n; i++)
+		{
+			if (A[i] > pirmas)
+			{
+				j = i - 1;
+				while (j >= 0 && A[j] < A[j + 1])
+				{
+					swap(A[j + 1], A[j]);
+					j = j - 1;
+				}
+			}
+			if (A[i] < pirmas)
+			{
+				j = i + 1;
+				while (j <= n - 1 && A[j] > A[j - 1])
+				{
+					swap(A[j - 1], A[j]);
+					j = j + 1;
+				}
+			}
+		}
+	}
+}
